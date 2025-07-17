@@ -21,10 +21,12 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 ### Screenshot
 
 #### 📱 Mobile View  
-<img width="367" height="750" alt="Mobile view of recipe page" src="https://github.com/user-attachments/assets/2ec4cce4-70c8-4623-9eb4-d37d1885bf1e" />
+<img width="401" height="772" alt="image" src="https://github.com/user-attachments/assets/bd995285-6af9-4961-9947-58a04957f093" />
+
 
 #### 💻 Desktop View  
-<img width="1875" height="945" alt="Desktop view of recipe page" src="https://github.com/user-attachments/assets/581ced28-40f7-4dc3-82a2-502c194a4ba8" />
+<img width="1909" height="955" alt="image" src="https://github.com/user-attachments/assets/d0ebd35f-9875-4dcc-bd04-a81971aaaaf7" />
+
 
 ### Links
 
