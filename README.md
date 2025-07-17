@@ -2,88 +2,135 @@
 
 ![Design preview for the Recipe page coding challenge](./preview.jpg)
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
+  - [Useful Resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+This is a solution to the [Recipe page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm). The challenge focuses on creating a responsive recipe card component with proper typography, spacing, and mobile-first design principles.
 
-## The challenge
+### Screenshot
 
-Your challenge is to build out this recipe page and get it looking as close to the design as possible.
+#### 📱 Mobile View  
+<img width="367" height="750" alt="Mobile view of recipe page" src="https://github.com/user-attachments/assets/2ec4cce4-70c8-4623-9eb4-d37d1885bf1e" />
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+#### 💻 Desktop View  
+<img width="1875" height="945" alt="Desktop view of recipe page" src="https://github.com/user-attachments/assets/581ced28-40f7-4dc3-82a2-502c194a4ba8" />
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Links
 
-## Where to find everything
+- **Solution URL:** [https://github.com/Raizo-03/recipe-page](https://github.com/Raizo-03/recipe-page)
+- **Live Site URL:** [https://recipe-page-omelette.vercel.app](https://recipe-page-omelette.vercel.app)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## My Process
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Built With
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Semantic HTML5 markup
+- CSS custom properties (CSS variables)
+- Flexbox for layout and alignment
+- Responsive units: `rem`, `em`, `px`, `%`, `vh`, `vw`
+- BEM methodology for CSS naming
+- Media queries (mobile-first approach)
+- CSS border-radius and box-shadow
+- Typography scaling with responsive units
+- HTML tables for nutrition data
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+### What I Learned
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+This project was a **deep dive into Flexbox and responsive units**, providing valuable insights into modern CSS layout techniques and UI design principles:
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+#### 🎯 **Flexbox Mastery**
+- **Container alignment**: Used `align-items: center` and `justify-content: center` for perfect centering
+- **Responsive behavior**: Learned how `align-items: stretch` fills mobile viewports completely
+- **Flex direction control**: Implemented `flex-direction: column` for vertical stacking
+- **Self-alignment**: Applied `align-self: flex-start` for precise element positioning
 
-## Building your project
+```css
+/* Key Flexbox insight: Mobile full-width containers */
+@media (max-width: 768px) {
+    body {
+        align-items: stretch; /* Fills entire viewport width */
+    }
+    
+    .container {
+        width: 100%;
+        border-radius: 0; /* Prevents visual gaps from rounded corners */
+    }
+}
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+#### 📐 **Responsive Units Deep Dive**
+- **`rem` vs `em`**: Used `rem` for consistent sizing, `em` for component-relative scaling
+- **Percentage units**: Applied `%` for fluid image sizing and container widths
+- **Viewport units**: Leveraged `vh` for minimum height constraints
+- **Pixel precision**: Used `px` for borders and fine details where exact control was needed
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```css
+/* Responsive unit strategy */
+.container-header_title {
+    font-size: 2rem;        /* Scalable with root font-size */
+    padding: 1rem 2rem;     /* Consistent spacing */
+}
 
-## Deploying your project
+.container-header_image {
+    width: 100%;            /* Fluid responsive image */
+    height: auto;           /* Maintains aspect ratio */
+}
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+#### 🎨 **UI Design Insights**
+- **Border-radius behavior**: Discovered how rounded corners create visual gaps on mobile
+- **Table styling**: Mastered `border-collapse: collapse` for seamless table borders
+- **Typography hierarchy**: Implemented proper font-weight and size relationships
+- **Visual rhythm**: Created consistent spacing patterns using CSS custom properties
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```css
+/* UI insight: Border opacity for subtle dividers */
+.container-nutrition_table th,
+.container-nutrition_table td {
+    border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+}
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+#### 🔧 **CSS Architecture Lessons**
+- **BEM methodology**: Structured CSS with `.block__element--modifier` pattern
+- **CSS custom properties**: Implemented design token system with `--stone-300`, `--white`
+- **Mobile-first approach**: Built responsive design from smallest screen up
+- **Semantic HTML**: Used proper heading hierarchy and table structure
 
-## Create a custom `README.md`
+### Continued Development
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+For future projects, I plan to focus on:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- **CSS Grid mastery**: Complex two-dimensional layouts
+- **Container queries**: Element-based responsive design
+- **Advanced Flexbox**: Nested flex containers and complex alignment
+- **CSS `clamp()`**: Fluid typography and spacing
+- **Accessibility**: ARIA labels, focus management, screen reader optimization
+- **Performance**: Critical CSS, font loading strategies, image optimization
+- **Modern CSS**: Logical properties, aspect-ratio, CSS nesting
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### Useful Resources
 
-## Submitting your solution
+- [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Essential flexbox reference
+- [MDN Web Docs - CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout) - Comprehensive flexbox documentation
+- [CSS Units Guide – CSS Tricks](https://css-tricks.com/the-lengths-of-css/) - Deep dive into responsive units
+- [BEM Methodology](https://getbem.com/) - CSS naming convention guide
+- [MDN Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) - Responsive design techniques
+- [CSS Custom Properties Guide](https://css-tricks.com/a-complete-guide-to-custom-properties/) - CSS variables mastery
+- [Every Layout](https://every-layout.dev/) - Modern CSS layout patterns
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+## Author
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- GitHub – [@Raizo-03](https://github.com/Raizo-03)
+- Frontend Mentor – [@Raizo-03](https://www.frontendmentor.io/profile/Raizo-03)
